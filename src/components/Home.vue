@@ -1,10 +1,13 @@
 <template>
 <div class="home">
+     <div class="description">Hi, I am</div>
   <div class="title"> CRAIG BRAAF </div>
- <p class="description" data-v-e4caeaf8="">Your favourite Full-Stack Developer!</p>
+ <div class="description">Your favourite Full-Stack Developer!</div>
  <div class="slide-btn mt-10" data-v-e4caeaf8="">
      <a class="rf-btn" href="#Contact" data-v-e4caeaf8="">Contact Me</a></div>
      </div>
+
+
 </template>
 
 <script>
@@ -14,19 +17,30 @@ export default {
 </script>
 
 <style>
-.title {
+
+.home {
+    padding: 0;
+    display: fixed;
+    margin: auto;
     margin: 0;
+    margin-top: 300px;
+}
+.title {
     color: rgb(255, 255, 255);
     font-size: 120px;
     font-weight: 900;
     margin-top: 300px;
+    margin-left: 900px;
+    align-items: center;
+    margin: auto;
 }
 
-.content p.description {
-    animation: custom0ne 1s ease-in-out 0s 1 normal none running;
-   
+.description {
+    margin-left: 15px;
+    color: white;
+    font-size: 25px;
+    font-weight: 20px;
 }
-
 p {
     padding: 0 17%;
 }

@@ -1,46 +1,50 @@
 <template>
 
   <section id="Contact">
-    <br><br><br>
-    Contact
-  <div class="contact-box">
-    <div class="contact-links">
-      <h2>GET IN TOUCH</h2>
-      <div class="links">
-        <div class="link">
-          <a><img src="https://i.postimg.cc/m2mg2Hjm/linkedin.png" alt="linkedin"></a>
+    <br><br><br>  
+<body>
+  <div class="contacthead">Get In Touch!</div>
+  <div class="contactcontainer">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">3 Queens Drive, Colorado Park</div>
+          <div class="text-two">Mitchells Plain</div>
         </div>
-        <div class="link">
-          <a><img src="https://i.postimg.cc/YCV2QBJg/github.png" alt="github"></a>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">0685680287</div>
         </div>
-        <div class="link">
-          <a><img src="https://i.postimg.cc/W4Znvrry/codepen.png" alt="netlify"></a>
-        </div>
-        <div class="link">
-          <a><img src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email"></a>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">braafcraig@gmail.com</div>
         </div>
       </div>
-    </div>
-    <div class="contact-form-wrapper">
-      <form>
-        <div class="form-item">
-          <input type="text" name="sender" required>
-          <label>Name:</label>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <div class="contactpara">If you have any work for me or queries related to my work, you can send me message from here. It's my pleasure to help you.</div>
+      <form method ="POST" action="https://formspree.io/f/mvodyone"> 
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Enter your name" required>
         </div>
-        <br>
-        <div class="form-item">
-          <input type="text" name="email" required>
-          <label>Email:</label>
+        <div class="input-box">
+          <input type="text" name="email" placeholder="Enter your email" required>
         </div>
-        <br>
-        <div class="form-item">
-          <textarea class="" name="message" required></textarea>
-          <label>Message:</label>
+        <div class="input-box message-box">
+          <input type="text" name="message" placeholder="Enter Message">
         </div>
-        <button class="submit-btn">Send</button>  
+        <div class="button">
+          <input type="submit" value="Send Now" >
+        </div>
       </form>
     </div>
+    </div>
   </div>
+</body>
 </section>
 </template>
 
@@ -52,217 +56,172 @@ export default {
 
 <style>
  #Contact {
-    background-color: red;
-    background-image: linear-gradient(to top right, red, yellow);
+    background-color:  rgb(95, 93, 93);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-
-* {
-  margin: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  font-family: "Poppins" , sans-serif;
 }
 
-body {
-  background-color: #6a9ac4;
-}
-
-#contact {
-     background-color: red;
-    background-image: linear-gradient(to top right, red, yellow);
-  display: flex;
-  justify-content: center;
+body{
+  padding-top: 85px;
+  width: 100%;
   align-items: center;
-}
-
-.contact-box {
-  width: clamp(100px, 90%, 1000px);
-  margin: 300px 500px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.contact-links, .contact-form-wrapper {
-  width: 50%;
-  padding: 8% 5% 10% 5%;
-}
-
-
-.contact-links {
-  background-color: #1f2e43;
-  background:
-    radial-gradient(
-      circle at 55% 92%, #426691 0 12%, transparent 12.2%
-    ), 
-    radial-gradient(
-      circle at 94% 72%, #426691 0 10%, transparent 10.2%
-    ), 
-    radial-gradient(
-      circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2%
-    ), 
-    radial-gradient(
-      circle at 0% 0%, #263a53 0 40%, transparent 40.2%
-    ), 
-    #1f2e43;
-  border-radius: 10px 0 0 10px;
-}
-
-.contact-form-wrapper {
-  background-color: #ffffff8f;
-  border-radius: 0 10px 10px 0;
-}
-
-@media only screen and (max-width: 800px) {
-  .contact-links, .contact-form-wrapper {
-    width: 100%;
-  }
-  
-  .contact-links {
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .contact-form-wrapper {
-    border-radius: 0 0 10px 10px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .contact-box {
-    width: 95%;
-    margin: 8% 5%;
-  }
-}
-
-h2 {
-  font-family: 'Arimo', sans-serif;
-  color: #fff;
-  font-size: clamp(30px, 6vw, 60px);
-  letter-spacing: 2px;
-  text-align: center;
-  transform: scale(.95, 1);
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding-top: 50px;
 }
 
-.link {
-  margin: 10px;
-  cursor: pointer;
+.contacthead {
+  color: white;
+  justify-content: center;
+  font-weight: 50px;
+  font-size: 50px;
+  
 }
 
-img {
-  width: 45px;
-  height: 45px;
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #0006);
-  transition: 0.2s;
-  user-select: none;
+.contactcontainer{
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height: 500px;
 }
-
-img:hover {
-  transform: scale(1.1, 1.1);
+.contactcontainer .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-img:active {
-  transform: scale(1.1, 1.1);
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #222)
-    sepia(0.3);
-}
-
-.form-item {
+.container .content .left-side{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
   position: relative;
 }
-
-label, input, textarea {
-  font-family: 'Poppins', sans-serif;
-}
-
-label {
+.content .left-side::before{
+  content: '';
   position: absolute;
-  top: 10px;
-  left: 2%;
-  color: #999;
-  font-size: clamp(14px, 1.5vw, 18px);
-  pointer-events: none;
-  user-select: none;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
 }
-
-input, textarea {
+.content .left-side .details{
+  margin: 14px;
+  text-align: center;
+}
+.content .left-side .details i{
+  font-size: 30px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.content .left-side .details .topic{
+  font-size: 18px;
+  font-weight: 500;
+}
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+  font-size: 14px;
+  color: #afafb6;
+}
+.contactcontainer .content .right-side{
+  width: 75%;
+  margin-left: 75px;
+}
+.content .right-side .topic-text{
+  font-size: 23px;
+  font-weight: 600;
+  color:  #000000;
+}
+.right-side .input-box{
+  height: 50px;
   width: 100%;
-  outline: 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 12px;
-  font-size: clamp(15px, 1.5vw, 18px);
+  margin: 12px 0;
 }
-
-input:focus+label, 
-input:valid+label, 
-textarea:focus+label, 
-textarea:valid+label {
-  font-size: clamp(13px, 1.3vw, 16px);
-  color: #777;
-  top: -20px;
-  transition: all .225s ease;
-}
-
-.submit-btn {
-  background-color: #f8492a;
-  filter: drop-shadow(2px 2px 3px #0003);
-  color: #fff;
-  font-family: "Poppins",sans-serif;
-  font-size: clamp(16px, 1.6vw, 18px);
-  display: block;
-  padding: 12px 20px;
-  margin: 2px auto;
+.right-side .input-box input,
+.right-side .input-box textarea{
+  height: 100%;
+  width: 100%;
   border: none;
-  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.right-side .message-box{
+  min-height: 110px;
+}
+.right-side .input-box textarea{
+  padding-top: 6px;
+}
+.right-side .button{
+  display: inline-block;
+  margin-top: 12px;
+}
+.right-side .button input[type="button"]{
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background:  #505050;
   cursor: pointer;
-  user-select: none;
-  transition: 0.2s;
+  transition: all 0.3s ease;
+}
+.button input[type="button"]:hover{
+  background:  #000000;
 }
 
-.submit-btn:hover {
-  transform: scale(1.1, 1.1);
-}
-
-.submit-btn:active {
-  transform: scale(1.1, 1.1);
-  filter: sepia(0.5);
-}
-
-@media only screen and (max-width: 800px) {
-  h2 {
-    font-size: clamp(40px, 10vw, 60px);
+@media (max-width: 950px) {
+  .contactcontainer{
+    width: 90%;
+    padding: 30px 40px 40px 35px ;
   }
+  .contactcontainer .content .right-side{
+   width: 75%;
+   margin-left: 55px;
+}
+}
+@media (max-width: 820px) {
+  .contactcontainer{
+    margin: 40px 0;
+    height: 100%;
+  }
+  .contactcontainer .content{
+    flex-direction: column-reverse;
+  }
+ .contactcontainer .content .left-side{
+   width: 100%;
+   flex-direction: row;
+   margin-top: 40px;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+ .contactcontainer .content .left-side::before{
+   display: none;
+ }
+ .contactcontainer .content .right-side{
+   width: 100%;
+   margin-left: 0;
+ }
 }
 
-@media only screen and (max-width: 400px) {
-  h2 {
-    font-size: clamp(30px, 12vw, 60px);
-  }
-  
-  .links {
-    padding-top: 30px;
-  }
-  
-  img {
-    width: 38px;
-    height: 38px;
-  }
+.contactpara {
+  font-size: 15px;
 }
-
 </style>

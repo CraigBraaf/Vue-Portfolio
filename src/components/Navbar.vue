@@ -1,6 +1,6 @@
 <template>
   <div class="navy">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
 
   <div class="container-fluid">
     <button
@@ -17,7 +17,7 @@
 
 
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-2">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
@@ -59,13 +59,13 @@ export default {
 }
 
 .nav-item {
-    display: inline-block;
+  display: inline-block;
   position: relative;
   color: #000000;
 }
 
 .nav-item:after {
-    content: '';
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
