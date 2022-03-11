@@ -28,11 +28,10 @@ export default {
     Skills,
     Testimonials,
     Projects,
-    Contact
-
-   
+    Contact 
   }
 }
+
 </script>
 
 <style>

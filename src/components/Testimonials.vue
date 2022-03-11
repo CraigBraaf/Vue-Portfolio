@@ -3,84 +3,48 @@
   <br><br><br>
 <div class="main">
   <div class="testhead">Testimonials</div>
-  <ul class="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://media.discordapp.net/attachments/898466432864645152/898466764671827968/me2.jpg?width=478&height=300"></div>
+  <div v-for="testimonial in testimonials" :key="testimonial" class="card">
+    <div  class="cards_item">
+      <div   class="card">
+        <div class="card_image"><img :src="testimonial.img"></div>
         <div class="card_content">
-          <h2 class="card_title">Leigh-Anne</h2>
-          <p class="card_text">Aspiring Front-End Developer</p>
-          <p class="card_text">Craig is very focused when it comes to his work especially the visual parts. He is a real creative!      
+          <h2 class="card_title">{{testimonial.name}}</h2>
+          <p class="card_text">{{testimonial.position}}</p>
+          <p class="card_text">{{testimonial.description}}      
             <br>
             <br>
           </p>
         </div>
       </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://media.discordapp.net/attachments/897834164357836820/897850338495852544/20210922_104043.jpg?width=478&height=300"></div>
-        <div class="card_content">
-          <h2 class="card_title">Zharne</h2>
-          <p class="card_text">Aspiring Front-End Developer</p>
-          <p class="card_text">Craig is really always willing to listen to you. Remembers what you tell him and always gives his
-            best.</p>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://media.discordapp.net/attachments/897462426793050122/897812760904224798/Screenshot_20211013_134204.jpg?width=478&height=300"></div>
-        <div class="card_content">
-          <h2 class="card_title">Tursha</h2>
-          <p class="card_text">Aspiring Front-End Developer</p>
-          <p class="card_text">Craig is a extremely vibrant person. He always ensure that he's work is polished and looking good. </p>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://media.discordapp.net/attachments/895010077080182795/897428091285155850/MG_5341.JPG?width=478&height=300"></div>
-        <div class="card_content">
-          <h2 class="card_title">Enosh</h2>
-          <p class="card_text">Aspiring Front-End Developer</p>
-          <p class="card_text">Craig is a very compassionate and uncomplicated person.<br>
-             He does exceptionally well with styling and decorating his web pages.</p>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://media.discordapp.net/attachments/898505129924395009/898530137925091358/me.jpg?width=478&height=300"></div>
-        <div class="card_content">
-          <h2 class="card_title">Tony</h2>
-          <p class="card_text">Aspiring Front-End Developer</p>
-          <p class="card_text">Craig is a very influencial person with remarkable enthusiams and with the most resfreshing energy.<br><br></p>
-        </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image"><img src="https://media.discordapp.net/attachments/895009723445817425/903598546811514951/1625390188691.jpg?width=478&height=300"></div>
-        <div class="card_content">
-          <h2 class="card_title">Alex</h2>
-          <p class="card_text">Lecturer</p>
-          <p class="card_text">Craig is a creative and mindful individual. He always brings life in the room and takes pride in his work.<br><br></p>
-        </div>
-      </div>
-    </li>
-  </ul>
+    </div>
+  </div>
+  
 </div>
   </section>
 </template>
 
-<script>
-export default {
 
-}
+
+<script>
+
+const url = "https://craigbraaf-api.herokuapp.com/"
+export default {
+  data(){
+    return {
+      testimonials:[]
+    };
+  },
+   
+  mounted(){
+    fetch(`${url}testimonials`)
+    .then((res) => res.json())
+    .then(data => this.testimonials = data)
+    .catch(err => console.log(err.message))
+  }}
+
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 #Testimonials {
@@ -93,6 +57,7 @@ export default {
 .main{
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: -200px;
 }
 
 .testhead {
@@ -103,9 +68,9 @@ export default {
 }
 
 img {
-  height: auto;
   max-width: 100%;
   vertical-align: middle;
+  object-fit: cover;
 }
 
 .cards {
@@ -118,7 +83,12 @@ img {
 
 .cards_item {
   display: flex;
+  justify-content: center;
+  align-content: center;
   padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 @media (min-width: 40rem) {
@@ -134,17 +104,19 @@ img {
 }
 
 .card {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  
 }
 
 .card_content {
   padding: 1rem;
   background: linear-gradient(to bottom left, #ffffff 10%, #ffffff 100%);
+  
 }
 
 .card_title {
@@ -169,4 +141,7 @@ img {
   margin-top: 35px;
   text-align: center;
 }
+
+
+
 </style>

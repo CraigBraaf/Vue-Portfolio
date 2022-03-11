@@ -26,11 +26,11 @@
       </div>
 
        <div class="sub-main">
-      <button class="button-three">Download CV</button>
+      <a target="_blank" href="https://docs.google.com/document/d/15Br488WIhKmaVbRHkUn0LTEGfADeHF0c/edit"><button class="button-three">Download CV</button></a>
     </div>
 
       <div class="icons"><div class="wrapper">
-  <a href="https://codepen.io/CraigBraaf">
+  <a target="_blank" href="https://codepen.io/CraigBraaf">
     <div class="icon codepen">
       <div class="tooltip">
         Codepen
@@ -38,7 +38,7 @@
       <span><i class="fab fa-codepen"></i></span>
     </div>
   </a>
-  <a href="https://github.com/CraigBraaf">
+  <a target="_blank" href="https://github.com/CraigBraaf">
     <div class="icon github">
       <div class="tooltip">
         Github
@@ -46,7 +46,7 @@
       <span><i class="fab fa-github"></i></span>
     </div>
   </a>
-  <a href="https://www.linkedin.com/in/craig-braaf-b47769224/">
+  <a target="_blank" href="https://www.linkedin.com/in/craig-braaf-b47769224/">
     <div class="icon linkedin">
       <div class="tooltip">
         LinkedIn
@@ -69,11 +69,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
  #About {
     background-color:  rgb(95, 93, 93);
-    /* background-image: linear-gradient(to top right, red, yellow); */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -104,7 +103,7 @@ export default {
 
 #left {
    float: left;
-   width: 500px;
+   width: 600px;
    height: 800px;
    border-radius: 20px;
    margin-top: 80px;
@@ -114,7 +113,6 @@ export default {
 
 img {
   height: 100% !important;
-  width: 400% !important;
   border-radius: 10px;
 }
 

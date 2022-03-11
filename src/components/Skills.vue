@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
  #Skills {
    padding-top: 100px;
     background-color:  rgb(95, 93, 93);

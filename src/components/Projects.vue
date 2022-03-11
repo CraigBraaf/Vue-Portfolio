@@ -4,85 +4,32 @@
       <div class="projectheading">Projects</div>
       <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
 
-<div class="projectscontainer">
-	<ul class="projectList">
+<div class="projects-container d-flex " >
+	<ul v-for="project in projects" :key="project" class="projectList">
 		
 		<li>
+			<div class="col">
 			<div class="projectWrap">
 				<div class="inner">
 					<div class="project">
 						<div class="innerWrap">
-							<div class="image" style="background-image:url(https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=29a9bb29bcbf19a5954d0110b19d5b51);"></div>
+							<div><img :src="project.img" alt=""></div>
 							<div class="metaWrap">
 								<div class="meta">
-									<h5>Calculator</h5>
-									<p class="label">Web Design & Web development</p>
-                  <a href="https://github.com/CraigBraaf/Cal-v2" target="_blank"><button id="da-btn" class="btn btn-secondary" type="button">Github</button></a>
-                <a href="https://modest-jepsen-572175.netlify.app/" target="_blank"><button id="da-womb" class="btn btn-secondary" type="button">Netlify</button></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</li>
-		
-		<li>
-			<div class="projectWrap">
-				<div class="inner">
-					<div class="project">
-						<div class="innerWrap">
-							<div class="image" style="background-image:url(../assets/pos.pngz);"></div>
-							<div class="metaWrap">
-								<div class="meta">
-									<h5>POS Website</h5>
-									<p class="label">Design & development</p>
+									<h5>{{ project.title}}</h5>
+									<p class="label"> class="label">Web Design & Web development</p>
 									<div class="buttonalign">
-                  <a href="https://github.com/CraigBraaf/POS-Project" target="_blank"><button id="da-btn" class="btn btn-secondary" type="button">Github</button></a>
-                <a href="https://app.netlify.com/sites/posprojectcraigbraaf/overview" target="_blank"><button id="da-womb" class="btn btn-secondary" type="button">Netlify</button></a></div>
+                  <a :href="project.github" target="_blank"><button id="da-btn" class="btn btn-secondary" type="button">Github</button></a>
+                <a :href="project.live" target="_blank"><button id="da-womb" class="btn btn-secondary" type="button">Netlify</button></a></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</li>
-		
-		<li>
-			<div class="projectWrap">
-				<div class="inner">
-					<div class="project">
-						<div class="innerWrap">
-							<div class="image" style="background-image:url(https://images.unsplash.com/reserve/unsplash_52ce2b0530dab_1.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=fbc452cf6c1d6921779ef531f2e53c0d);"></div>
-							<div class="metaWrap">
-								<div class="meta">
-									<h5>dsad</h5>
-									<p class="label">Design & development</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</li>
-		
-		<li>
-			<div class="projectWrap">
-				<div class="inner">
-					<div class="project">
-						<div class="innerWrap">
-							<div class="image" style="background-image:url(https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6d1a6d1c5a7eb63d0c411b1d019f0b30);"></div>
-							<div class="metaWrap">
-								<div class="meta">
-									<h5>Project name</h5>
-									<p class="label">Design & development</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</li>
+
 		
 	</ul>
 </div>
@@ -90,20 +37,35 @@
 </template>
 
 <script>
+export default{
+	data(){
+		return{
+			projects:[]
+		}
+	},
+
+	mounted(){
+		fetch("https://craigbraaf-api.herokuapp.com/projects")
+		.then(res => res.json())
+		.then(data => this.projects = data)
+		.catch(err => console.log(err.message)) 
+	}
+}
 
 </script>
 
-<style>
+<style scoped>
+
 
  #Projects {
     background-color:  rgb(95, 93, 93);
     height: 100vh;
   }
 
-body {
+/* body {
 	margin:0;
 	padding:0;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
 	font-family:'Montserrat', sans-serif;
@@ -213,7 +175,7 @@ p.label {
 	position:relative;
 	overflow:hidden;
 	border-radius:1px;
-	-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+	/* -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); */
 }
 
 .projectList li .projectWrap .inner .project .innerWrap .image {

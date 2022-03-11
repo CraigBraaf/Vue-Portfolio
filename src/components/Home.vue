@@ -2,7 +2,7 @@
 <div class="home">
      <div class="description">Hi, I am</div>
   <div class="title"> CRAIG BRAAF </div>
- <div class="description">Your favourite Full-Stack Developer!</div>
+ <div class="description">An Aspiring Full-Stack Developer!</div>
  <div class="slide-btn mt-10" data-v-e4caeaf8="">
      <a class="rf-btn" href="#Contact" data-v-e4caeaf8="">Contact Me</a></div>
      </div>
@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .home {
     padding: 0;

@@ -27,35 +27,67 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <div class="contactpara">If you have any work for me or queries related to my work, you can send me message from here. It's my pleasure to help you.</div>
-      <form method ="POST" action="https://formspree.io/f/mvodyone"> 
+    
+      <form @submit.prevent="handleSubmit"> 
         <div class="input-box">
-          <input type="text" name="name" placeholder="Enter your name" required>
+          <input type="text" name="name" placeholder="Enter your name" required v-model="name">
         </div>
         <div class="input-box">
-          <input type="text" name="email" placeholder="Enter your email" required>
+          <input type="text" name="email" placeholder="Enter your email" required v-model="email">
         </div>
         <div class="input-box message-box">
-          <input type="text" name="message" placeholder="Enter Message">
+          <input type="text" name="message" placeholder="Enter Message" require v-model="message">
         </div>
         <div class="button">
-          <input type="submit" value="Send Now" >
+          <button><input type="submit" value="Send Now" ></button>
         </div>
       </form>
     </div>
     </div>
   </div>
 </body>
+<footer>Craig Braaf @ 2022</footer>
 </section>
 </template>
 
 <script>
 export default {
+  data (){
+    return{
+      email:"",
+      name:"",
+      message: "",
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log("Form has been submitted")
+        console.log(this.name)
+        console.log(this.email)
+        console.log(this.message)
 
-}
+        fetch('http://localhost:5000/contact', {
+  method: 'POST',
+  body: JSON.stringify({
+    name:this.name,
+    email:this.email,
+    message:this.message,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => alert(json.msg))
+  .catch((e) => alert(e.msg));
+    }
+  }
+};
+
 </script>
 
-<style>
- #Contact {
+<style scoped>
+ #Contact{
     background-color:  rgb(95, 93, 93);
     background-size: cover;
     background-repeat: no-repeat;
