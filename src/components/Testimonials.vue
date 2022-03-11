@@ -1,5 +1,5 @@
 <template>
-<section>
+<section id="testimonials">
 <div class="testimonials-heading">
         <h1>TESTIMONIALS</h1>
       </div>
@@ -15,8 +15,6 @@
           </div>
         </div>
       </div>
-  
-
   </section>
 </template>
 
@@ -44,11 +42,16 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
+#testimonials {
+    background-color:  rgb(95, 93, 93);
+    /* height: 100vh; */
 
+}
 
 .testimonials-heading h1 {
-    margin-top: 5rem;
+    padding-top: 5rem;
     margin-bottom: 5rem;
+    color: white;
   }
 
   .testimonials-container {
@@ -58,9 +61,10 @@ export default {
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
     margin-left: 50px;
     margin-right: 50px;
+    
   }
 
   .testimonial {
@@ -72,6 +76,7 @@ export default {
     border-radius: 5px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
     margin: 10px;
+    background: rgba(255, 255, 255);
   }
 
   .testimonial-image {
