@@ -4,7 +4,7 @@
       <div class="projectheading">Projects</div>
       <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
 
-<div class="projects-container d-flex " >
+<div class="projects-container d-flex" >
 	<ul v-for="project in projects" :key="project" class="projectList">
 		
 		<li>
@@ -62,10 +62,10 @@ export default{
     height: 100vh;
   }
 
-/* body {
+body {
 	margin:0;
 	padding:0;
-} */
+}
 
 h1, h2, h3, h4, h5, h6 {
 	font-family:'Montserrat', sans-serif;
