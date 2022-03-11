@@ -4,7 +4,7 @@
       <div class="projectheading">Projects</div>
       <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
 
-<div class="projects-container d-flex" >
+<div class="projects-container" >
 	<ul v-for="project in projects" :key="project" class="projectList">
 		
 		<li>
@@ -56,6 +56,10 @@ export default{
 
 <style scoped>
 
+.projects-container {
+   display: flex;
+   margin-inline: auto;
+}
 
  #Projects {
     background-color:  rgb(95, 93, 93);
@@ -106,8 +110,9 @@ p.label {
 }
 
 .projectList {
-	width:100%;
-	float:left;
+	width:50%;
+	/* float:left; */
+	margin-inline: auto;
 	list-style:none;
 	margin:0;
 	padding:10px;
